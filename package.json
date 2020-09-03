@@ -1,0 +1,26 @@
+{
+  "name": "aplicacion-angular",
+  "version": "1.0.0",
+  "description": "Primera Aplicacion en Angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sngrisa/ProyectoAngular.git"
+  },
+  "author": "Santiago Grisafi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sngrisa/ProyectoAngular/issues"
+  },
+  "homepage": "https://github.com/sngrisa/ProyectoAngular#readme",
+  "dependencies": {
+    "@angular/cli": "^10.1.0"
+  },
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
