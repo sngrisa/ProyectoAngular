@@ -1,2 +1,30 @@
-<app-viaje-destino *ngFor="let x of destino" [nombre] = "x"></app-viaje-destino>
+<div	class="container	content">
+        <div class="row">
+                <div class="col-md-6 offset-md-3">
+                 <span class="anchor" id="formLogin"></span>
+                        <div class="card card-outline-secondary">
+                           <div	class="card-header">
+                                <h3 class="mb-0"><span class="oi oi-bar-chart"></span> Mi lista de deseos (Wishlist)</h3>
+                           </div>
+                                <div class="card-body">
+                                <form>
+                                 <div class="form-group">
+                                  <label for="nombre"><span class="oi oi-box"></span> Nombre del destino: </label>
+                                  <input type="text" class="form-control" id="nombre" placeholder="Ingresar nombre..." #nombre>
+                                </div>
+                                <div class="form-group">
+                                <label for="ImagenUrl"><span class="oi oi-battery-full"></span> ImagenUrl: </label>
+                                <input	type="text" class="form-control" id="imagenUrl"	placeholder="Ingresar url..." #url>
+                                </div>
+                                <button	type="submit" class="btn btn-primary" (click)="guardar(nombre.value,url.value)"><span class="oi oi-arrow-circle-bottom"></span> Añadir Destino</button>
+                                </form>
+                                </div>
+                        </div>
+                </div>
+         </div>
+                                <hr class="mb-5">
+                                <div class="row">
+                                        <app-viaje-destino *ngFor="let d of destino"[destino]="d"></app-viaje-destino>
+                                </div>
+</div>
 

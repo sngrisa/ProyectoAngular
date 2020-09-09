@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ViajeDestino} from '../models/viaje-destino.model';
 import { ViajeDestinoComponent } from './viaje-destino.component';
 
 describe('ViajeDestinoComponent', () => {
