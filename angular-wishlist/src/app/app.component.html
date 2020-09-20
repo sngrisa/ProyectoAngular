@@ -1,8 +1,16 @@
 <div class="container content">
   <app-navbar></app-navbar>
-  <p>
-    
-  </p>
-    <app-lista-destinos></app-lista-destinos>
+  <div class="page-header">
+    <div class="navLinks">
+  <a [routerLink]="['/home']">Home </a>
+  <a [routerLink]="['/destino']">Destino</a>
 </div>
+  </div>
+    <router-outlet></router-outlet>
+</div>
+
+<hr class="mb-5">
+
+<p style="text-align: center;">{{ time | async}}</p>
+
 <app-footer></app-footer>

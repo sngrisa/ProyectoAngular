@@ -1,13 +1,32 @@
 <div class="card-content">
                     <div class="card-img">
                     <img src="https://www.lavanguardia.com/r/GODO/LV/p3/WebSite/2016/05/20/Recortada/img_mbigas_20160520-135524_imagenes_lv_getty_taj-k6e-U401920311809rVB-992x558@LaVanguardia-Web.jpg" alt="img top">
-                    <span>{{destino.nombre}}</span>
+                    <span>{{position}}</span>
                     </div>
                     <div class="card-desc">
                     <h4 style="text-align: center;">{{destino.nombre}}</h4>
-                    <p> El mundo es tan grande que a la hora de viajar necesitamos inspiración para decidirnos por un destino u otro. Hoy en día podemos alcanzar prácticamente cualquier rincón del planeta; miramos mapas, leemos libros de viajes, 
-                        vemos películas e imágenes compartidas en redes sociales por otros viajeros, consultamos aplicaciones viajeras en nuestros móviles… ¡Es tan difícil escoger entre todas las opciones que tenemos a nuestro alcance!</p>
-                    <a	href="#"	class="btn-card">Leer Mas</a>			
+                    <p style="color: saddlebrown;">Servicios:
+                        <li *ngFor="let s of destino.servicios">
+                            <span [ngSwitch]="s">
+                                <i *ngSwitchCase="'Desayuno'" style="color: red;">{{s}}</i>
+                                <i *ngSwitchCase="'Pileta'" style="color:blue;">{{s}}</i>
+                                <i *ngSwitchCase="'Videojuegos'" style="color:chocolate;">{{s}}</i>
+                                <i *ngSwitchCase="'Natacion'" style="color:green;">{{s}}</i>
+                                <i *ngSwitchCase="'Football'" style="color:grey;">{{s}}</i>
+                                <i *ngSwitchCase="'Cine'" style="color:indigo;">{{s}}</i>
+                                <i *ngSwitchCase="'Tenis'" style="color:pink;">{{s}}</i>
+                                <i *ngSwitchDefault>{{s}}</i>
+                            </span>
+                        </li>
+                    </p>
+                    <a	href="#" class="btn-card" (click)="ir()"> Marcar</a>
+                    <span *ngIf="destino.isSelected()">
+                        <span ngNonBindable> Marcado como Favorito</span>
+                    </span>
+                    <p>
+
+                    </p>		
+                    <a [routerLink]="['/destino']"> Ver Detalle</a>	
 </div>
 </div>
     
