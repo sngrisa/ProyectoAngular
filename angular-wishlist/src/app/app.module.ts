@@ -16,9 +16,11 @@ import { FormDestinoViajeComponent } from './form-destino-viaje/form-destino-via
 import { DestinosApiClient } from './models/destinos-api-client.model';
 import { ComboboxComponent } from './combobox/combobox.component';
 import { DestinosViajesState, reducerDestinosViajes, intializeDestinosViajesState, DestinosViajesEffects } from './models/destinos-viajes-state.model';
-import { ActionReducerMap, INITIAL_STATE, ReducerObservable, Store } from '@ngrx/store';
+import { ActionReducerMap, INITIAL_STATE, ReducerObservable, Store, StoreModule } from '@ngrx/store';
 import { StoreModule as NgRxStoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 const routes: Routes =[
    {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -65,6 +67,7 @@ let reducersInitialsState = {
     RouterModule.forRoot(routes),
     NgRxStoreModule.forRoot(reducers, ({initialState: reducersInitialsState })),
     EffectsModule.forRoot([DestinosViajesEffects]),
+    StoreDevtoolsModule.instrument(),
   ],
 
   providers: [

@@ -3,28 +3,28 @@ import { ViajeDestino } from './viaje-destino.model';
 import { Store } from '@ngrx/store';
 import { AppState } from './../app.module';
 import { ElegidoFavoritoAction, NuevoDestinoAction } from './destinos-viajes-state.model';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class DestinosApiClient {
 	destino: ViajeDestino[];
-  current: Subject<ViajeDestino> = new BehaviorSubject<ViajeDestino>(null);
-	constructor() {
+	constructor(private store: Store<AppState>) {
        this.destino = [];
   }
-	add(d:ViajeDestino){
-    this.destino.push(d);
-	}
-	getAll(): ViajeDestino []{
-	  return this.destino;
-	}
-	getbyId(id : String): ViajeDestino{
-		return this.destino.filter(function(d) { return d.id.toString() == id; })[0];
-	}
-	elegir(d: ViajeDestino){
-		this.destino.forEach(x => x.setSelected(false));
-		d.setSelected(true);
-		this.current.next(d);
-	}
-	subscribeOnChange(fn){
-		this.current.subscribe(fn);
-	}
+
+ getbyId(id : String): ViajeDestino{
+	return this.destino.filter(function(d) { return d.id.toString() == id; })[0];
+ }
+
+ add(d:ViajeDestino){
+    this.store.dispatch(new NuevoDestinoAction(d));
+ }
+
+ getAll(): ViajeDestino []{
+	return this.destino;
+ }
+
+ elegir(d: ViajeDestino){
+		this.store.dispatch(new ElegidoFavoritoAction(d));
+ }
 }

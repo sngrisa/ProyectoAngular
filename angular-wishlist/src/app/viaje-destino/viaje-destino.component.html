@@ -18,7 +18,15 @@
                                 <i *ngSwitchDefault>{{s}}</i>
                             </span>
                         </li>
-                    </p>
+                      </p>
+                        <p style="text-align: center;">
+                            Votar:
+                        </p>
+                        <p style="text-align: center;">
+                            
+                            <a href="#" (click)="voteUp()"><i class="material-icons md-18">thumb_up</i></a>
+                            <a href="#" (click)="voteDown()"><i class="material-icons md-18">thumb_down</i></a>
+                        </p>
                     <a	href="#" class="btn-card" (click)="ir()"> Marcar</a>
                     <span *ngIf="destino.isSelected()">
                         <span ngNonBindable> Marcado como Favorito</span>
