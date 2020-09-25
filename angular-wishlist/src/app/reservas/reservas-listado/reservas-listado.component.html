@@ -1,0 +1,13 @@
+<p>
+   
+  </p>
+  <a [routerLink]="['./', 10]" style="color: darkblue;"> Ir a detalles reservas!!!</a>
+  <p>
+
+  </p>
+  <p style="text-align: center; color: olivedrab;">
+        Tipos de reservas:
+</p>
+  <div *ngFor="let r of api.getAll()" style="background-color: palegoldenrod; color:black;">
+    {{r.id}} - {{r.name}}
+  </div>

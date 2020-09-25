@@ -1,0 +1,40 @@
+<div class="container">
+<form
+		[formGroup]="fg"
+		(ngSubmit)="guardar(
+								fg.controls['nombre'].value,
+								fg.controls['url'].value
+					)">
+    <div class="row">   
+    <div class="col-sm-6">    
+    <div class="form-group">
+    <label for="nombre">Nombre: </label>
+    <input type="text" class="form-control"
+    		id="nombre" placeholder="Ingresar nombre..."
+        [formControl]="fg.controls['nombre']">
+      </div>
+        <div *ngIf="fg.controls['nombre'].hasError('required')" style="background-color:coral; color: white;"> Campo de Nombre Vacio!</div>
+        <div *ngIf="fg.controls['nombre'].hasError('invalidNombre')" style="background-color: coral; color: white;"> Nombre Invalido!</div>
+        <div *ngIf="fg.controls['nombre'].hasError('minLongNombre')" style="background-color: coral; color:white"> El nombre debe tener como minimo {{minLongitud}} de caracteres!</div>
+  </div>
+  <div class="col-sm-6" style="width: 300px;">
+      
+    <app-combobox></app-combobox>
+      
+    </div>
+  </div> 
+  <div class="form-group">
+    <label for="Imagen Url">Imagen Url: </label>
+    <input type="text" class="form-control"
+    		id="imagenUrl" placeholder="Ingresar url..."
+        [formControl]="fg.controls['url']">
+        <p>
+
+        </p>
+        <div *ngIf="fg.controls['url'].hasError('required')" style="color: white; background-color: coral;"> Campo de Url Vacio!</div>
+        <div *ngIf="fg.controls['url'].hasError('invalidUrl')" style="color: white; background-color: coral;"> Url Invalida!</div>
+        <div *ngIf="fg.controls['url'].hasError('minLongUrl')" style="background-color:coral; color: white;"> La Url debe tener como minimo {{minLongitud}} de caracteres!</div>
+  </div>
+  <button type="submit" class="btn btn-primary" *ngIf="fg.valid"> Guardar!</button>
+</form>
+</div>

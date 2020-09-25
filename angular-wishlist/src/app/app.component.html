@@ -1,13 +1,22 @@
 <div class="container content">
   <app-navbar></app-navbar>
+  <h6 style="text-align: center;">
+    Login de usuarios !!!
+  </h6>
+  <app-login></app-login>
   <div class="page-header">
     <div class="navLinks">
-  <a [routerLink]="['/home']">Home </a>
-  <a [routerLink]="['/destino']">Destino</a>
+  <a [routerLink]="['/home']"><span class="oi oi-clipboard"></span> Lista de Viajes Deseados </a>
+  <a [routerLink]="['/reservas']"><span class="oi oi-action-undo"></span> Reservas </a>
+  <a [routerLink]="['/vuelos']"><span class="oi oi-dial"></span> Vuelos (se requiere de inicio de sesion) </a>
 </div>
   </div>
+  <p>
+    
+  </p>
     <router-outlet></router-outlet>
 </div>
+
 
 <hr class="mb-5">
 

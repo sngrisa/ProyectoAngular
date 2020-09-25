@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, HostBinding, EventEmitter, Output } from '@angular/core';
-import { ViajeDestino } from './../models/viaje-destino.model';
+import { ViajeDestino } from './../../models/viaje-destino.model';
 import { Store } from '@ngrx/store';
-import { AppState } from './../app.module';
-import { VoteUpAction, VoteDownAction } from './../models/destinos-viajes-state.model';
+import { AppState } from './../../app.module';
+import { VoteUpAction, VoteDownAction } from './../../models/destinos-viajes-state.model';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({

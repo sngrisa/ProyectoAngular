@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class DestinosApiClient {
 	destino: ViajeDestino[];
-	constructor(private store: Store<AppState>) {
+	constructor(public store: Store<AppState>) {
        this.destino = [];
   }
 
