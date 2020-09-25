@@ -19,7 +19,7 @@ export class FormDestinoViajeComponent implements OnInit {
   minLongitud = 3;
   searchResults: string [];
 
-  constructor(private fb: FormBuilder, @Inject(forwardRef(() => APP_CONFIG )) private config: AppConfig) { 
+  constructor(public fb: FormBuilder, @Inject(forwardRef(() => APP_CONFIG )) private config: AppConfig) { 
     //inicializar
     this.minLongitud = 3;
     this.onItemAdded = new EventEmitter();

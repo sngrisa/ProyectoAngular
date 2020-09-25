@@ -13,7 +13,6 @@ import { MensajeComponent } from './components/mensaje/mensaje.component';
 import { UserService } from './services/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormDestinoViajeComponent } from './components/form-destino-viaje/form-destino-viaje.component';
-import { ComboboxComponent } from './components/combobox/combobox.component';
 import { DestinosViajesState, reducerDestinosViajes, intializeDestinosViajesState, DestinosViajesEffects } from './models/destinos-viajes-state.model';
 import { ActionReducerMap, INITIAL_STATE, ReducerObservable, Store, StoreModule } from '@ngrx/store';
 import { StoreModule as NgRxStoreModule } from '@ngrx/store';
@@ -36,10 +35,10 @@ export interface AppConfig{
 }
 
 const APP_CONFIG_VALUE: AppConfig = {
-  apiEndpoint: 'http://localhost:home'
+  apiEndpoint: 'http://localhost:3000'
 };
 
-export const APP_CONFIG = new InjectionToken<AppState>('app.config');
+export const APP_CONFIG = new InjectionToken<AppConfig>('app.config');
 // fin app config
 
 export const childrenRoutesVuelos: Routes = [
@@ -97,7 +96,6 @@ let reducersInitialsState = {
     DestinoDetalleComponent,
     MensajeComponent,
     FormDestinoViajeComponent,
-    ComboboxComponent,
     LoginComponent,
     ProtectedComponent,
     VuelosComponentComponent,

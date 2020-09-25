@@ -8,7 +8,7 @@
     <div class="row">   
     <div class="col-sm-6">    
     <div class="form-group">
-    <label for="nombre">Nombre: </label>
+    <label for="nombre"><span class="oi oi-book"></span> Nombre: </label>
     <input type="text" class="form-control"
     		id="nombre" placeholder="Ingresar nombre..."
         [formControl]="fg.controls['nombre']">
@@ -17,14 +17,19 @@
         <div *ngIf="fg.controls['nombre'].hasError('invalidNombre')" style="background-color: coral; color: white;"> Nombre Invalido!</div>
         <div *ngIf="fg.controls['nombre'].hasError('minLongNombre')" style="background-color: coral; color:white"> El nombre debe tener como minimo {{minLongitud}} de caracteres!</div>
   </div>
-  <div class="col-sm-6" style="width: 300px;">
-      
-    <app-combobox></app-combobox>
-      
-    </div>
-  </div> 
-  <div class="form-group">
-    <label for="Imagen Url">Imagen Url: </label>
+  <div class="col-sm-6">
+    <p><span class="oi oi-bullhorn"></span> Querras decir: </p>
+    <ul>
+      <li *ngFor="let r of searchResults;">{{r}}</li>
+  </ul>
+  </div>
+
+    <div class="col-sm-12">
+    <div class="form-group">
+    <p>
+
+    </p>
+    <label for="Imagen Url"><span class="oi oi-bold"></span> Imagen Url: </label>
     <input type="text" class="form-control"
     		id="imagenUrl" placeholder="Ingresar url..."
         [formControl]="fg.controls['url']">
@@ -35,6 +40,10 @@
         <div *ngIf="fg.controls['url'].hasError('invalidUrl')" style="color: white; background-color: coral;"> Url Invalida!</div>
         <div *ngIf="fg.controls['url'].hasError('minLongUrl')" style="background-color:coral; color: white;"> La Url debe tener como minimo {{minLongitud}} de caracteres!</div>
   </div>
-  <button type="submit" class="btn btn-primary" *ngIf="fg.valid"> Guardar!</button>
+</div>
+</div> 
+<div class="col-sm-12">
+<button type="submit" class="btn btn-primary" *ngIf="fg.valid"> Guardar!</button>
+</div>
 </form>
 </div>
