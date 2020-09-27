@@ -1,15 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { InjectionToken, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { ViajeDestinoComponent } from './components/viaje-destino/viaje-destino.component';
+import { DestinoViajeComponent } from './components/destino-viaje/destino-viaje.component';
 import { ListaDestinosComponent } from './components/lista-destinos/lista-destinos.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
-import { ListadeejemploComponent } from './components/listadeejemplo/listadeejemplo.component';
 import { RouterModule, Routes} from '@angular/router';
 import { DestinoDetalleComponent } from './components/destino-detalle/destino-detalle.component';
-import { MensajeComponent } from './components/mensaje/mensaje.component';
 import { UserService } from './services/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormDestinoViajeComponent } from './components/form-destino-viaje/form-destino-viaje.component';
@@ -87,14 +84,10 @@ let reducersInitialsState = {
 @NgModule({
   declarations: [
     AppComponent,
-    ViajeDestinoComponent,
     ListaDestinosComponent,
     NavbarComponent,
     FooterComponent,
-    TarjetasComponent,
-    ListadeejemploComponent,
     DestinoDetalleComponent,
-    MensajeComponent,
     FormDestinoViajeComponent,
     LoginComponent,
     ProtectedComponent,
@@ -103,6 +96,7 @@ let reducersInitialsState = {
     VuelosMasInfoComponentComponent,
     VuelosDetalleComponent,
     VuelosComponent,
+    DestinoViajeComponent,
 
   ],
   imports: [

@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, forwardRef, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, ValidatorFn } from '@angular/forms';
 import { fromEvent, pipe } from 'rxjs';
-import { ViajeDestino } from '../../models/viaje-destino.model';
+import { DestinoViaje } from './../../models/destino-viaje-model';
 import { map, filter, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { ajax, AjaxResponse } from 'rxjs/ajax';
 import { AppConfig, APP_CONFIG } from 'src/app/app.module';
@@ -14,7 +14,7 @@ import { AppConfig, APP_CONFIG } from 'src/app/app.module';
 })
 
 export class FormDestinoViajeComponent implements OnInit {
-  @Output() onItemAdded: EventEmitter<ViajeDestino>;
+  @Output() onItemAdded: EventEmitter<DestinoViaje>;
   fg: FormGroup;
   minLongitud = 3;
   searchResults: string [];
@@ -57,7 +57,7 @@ export class FormDestinoViajeComponent implements OnInit {
 
 
   guardar(nombre: string, url: string): boolean {
-    const d = new ViajeDestino(nombre, url);
+    const d = new DestinoViaje(nombre, url);
     this.onItemAdded.emit(d);
     return false;
   }

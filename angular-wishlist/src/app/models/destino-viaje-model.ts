@@ -1,6 +1,6 @@
 import { v4 as uuid } from 'uuid';
 
-export class ViajeDestino{
+export class DestinoViaje{
     public selected: boolean;
     public servicios: string[];
     id = uuid();
@@ -21,4 +21,3 @@ export class ViajeDestino{
             this.votes--;
         }
     }
-

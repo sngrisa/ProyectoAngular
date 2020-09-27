@@ -1,0 +1,39 @@
+<div class="card-content">
+    <div class="card-img">
+    <img src="https://www.lavanguardia.com/r/GODO/LV/p3/WebSite/2016/05/20/Recortada/img_mbigas_20160520-135524_imagenes_lv_getty_taj-k6e-U401920311809rVB-992x558@LaVanguardia-Web.jpg" alt="img top">
+    <span>{{position}}</span>
+    </div>
+    <div class="card-desc">
+    <h4 style="text-align: center;">{{destino.nombre}}</h4>
+    <p style="color: saddlebrown;">Servicios:
+        <li *ngFor="let s of destino.servicios">
+            <span [ngSwitch]="s">
+                <i *ngSwitchCase="'Desayuno'" style="color: red;">{{s}}</i>
+                <i *ngSwitchCase="'Pileta'" style="color:blue;">{{s}}</i>
+                <i *ngSwitchCase="'Videojuegos'" style="color:chocolate;">{{s}}</i>
+                <i *ngSwitchCase="'Natacion'" style="color:green;">{{s}}</i>
+                <i *ngSwitchCase="'Football'" style="color:grey;">{{s}}</i>
+                <i *ngSwitchCase="'Cine'" style="color:indigo;">{{s}}</i>
+                <i *ngSwitchCase="'Tenis'" style="color:pink;">{{s}}</i>
+                <i *ngSwitchDefault>{{s}}</i>
+            </span>
+        </li>
+      </p>
+        <p style="text-align: center;">
+            Votar:
+        </p>
+        <p style="text-align: center;">
+            
+            <a href="#" (click)="voteUp()"><i class="material-icons md-18">thumb_up</i></a>
+            <a href="#" (click)="voteDown()"><i class="material-icons md-18">thumb_down</i></a>
+        </p>
+    <a	href="#" class="btn-card" (click)="ir()"> Marcar</a>
+    <span *ngIf="destino.isSelected()">
+        <span ngNonBindable> Marcado como Favorito</span>
+    </span>
+    <p>
+
+    </p>		
+    <a [routerLink]="['/destino']"> Ver Detalle</a>	
+</div>
+</div>

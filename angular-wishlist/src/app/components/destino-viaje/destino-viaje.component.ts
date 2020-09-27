@@ -1,14 +1,14 @@
 import { Component, OnInit, Input, HostBinding, EventEmitter, Output } from '@angular/core';
-import { ViajeDestino } from './../../models/viaje-destino.model';
+import { DestinoViaje } from './../../models/destino-viaje-model';
 import { Store } from '@ngrx/store';
 import { AppState } from './../../app.module';
 import { VoteUpAction, VoteDownAction } from './../../models/destinos-viajes-state.model';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
-  selector: 'app-viaje-destino',
-  templateUrl: './viaje-destino.component.html',
-  styleUrls: ['./viaje-destino.component.css'],
+  selector: 'app-destino-viaje',
+  templateUrl: './destino-viaje.component.html',
+  styleUrls: ['./destino-viaje.component.css'],
 
 animations: [
   trigger('esFavorito', [
@@ -28,11 +28,11 @@ animations: [
  ],
 })
 
-export class ViajeDestinoComponent implements OnInit {
-  @Input() destino: ViajeDestino;
+export class DestinoViajeComponent implements OnInit {
+  @Input() destino: DestinoViaje;
   @Input('idx') position: number;
   @HostBinding('attr.class') cssClass = 'col-md-4';
-  @Output() onClicked: EventEmitter<ViajeDestino>;
+  @Output() onClicked: EventEmitter<DestinoViaje>;
   
   constructor(private store: Store<AppState>){
     this.onClicked = new EventEmitter();
@@ -58,4 +58,3 @@ voteDown(){
 }
 
 }
-

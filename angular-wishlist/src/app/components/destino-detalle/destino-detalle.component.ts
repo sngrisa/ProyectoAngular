@@ -1,12 +1,12 @@
 import { Component, OnInit, InjectionToken, Inject, Injectable } from '@angular/core';
 import { DestinosApiClient } from './../../models/destinos-api-client.model';
-import { ViajeDestino } from './../../models/viaje-destino.model';
+import { DestinoViaje } from './../../models/destino-viaje-model';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.module';
 
 class DestinosApiClientViejo{
-  getById(id: String): ViajeDestino {
+  getById(id: String): DestinoViaje {
     console.log('Llamado por la clase vieja');
     return null;
   }
@@ -27,7 +27,7 @@ class DestinosApiClientDecorated extends DestinosApiClient {
   constructor(@Inject(APP_CONFIG) private config: AppConfig, store: Store<AppState>){
     super(store);
   }
-  getById(id: String): ViajeDestino {
+  getById(id: String): DestinoViaje {
     console.log('Llamado por la clase decorada!');
     console.log('config: ' + this.config.apiEndpoint);
     return super.getbyId(id);
@@ -46,7 +46,7 @@ class DestinosApiClientDecorated extends DestinosApiClient {
 })
 
 export class DestinoDetalleComponent implements OnInit {
-  destino: ViajeDestino;
+  destino: DestinoViaje;
   style = {
     sources: {
       world: {
